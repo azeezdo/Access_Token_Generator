@@ -1,0 +1,7 @@
+﻿<Properties StartupConfiguration="{C70CB536-C090-4AF4-AA74-3D3F0CFDA152}|https">
+  <MonoDevelop.Ide.ItemProperties.AccessTokenInfrastructure FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AccessTokenDomain FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.AccessTokenAPI FirstBuild="True" PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.AccessTokenApplication FirstBuild="True" />
+</Properties>
