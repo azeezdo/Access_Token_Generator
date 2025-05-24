@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace AccessTokenDomain.Entity
@@ -12,6 +13,8 @@ namespace AccessTokenDomain.Entity
         public DateTime DateCreated { get; set; }
         public string ModifyBy { get; set; }
         public DateTime Modify { get; set; }
+        public string? OTP { get; set; }
+        public DateTime? OtpSubmittedTime { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 using AccessTokenDomain.Entity;
 using AccessTokenDomain.Interfaces.IServices;
 using AccessTokenDomain.Model.Request;
@@ -25,8 +26,9 @@ namespace AccessTokenApplication.Services
 			_email = email;
 
         }
+        private const string AlphanumericChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-		public async Task<CustomResponse> CreateUser(UserRequest userdto)
+        public async Task<CustomResponse> CreateUser(UserRequest userdto)
 		{
 			User user = null;
 			CustomResponse result = null;
@@ -85,41 +87,44 @@ namespace AccessTokenApplication.Services
 			return result;
 		}
 
-		public async Task<CustomResponse> AuthenticateUser(User user, string password)
+		public async Task<CustomResponse> GenerateAccessToken(TokenRequestModel model)
 		{
-			IdentityResult result = null;
-            if (user is null)
-            {
-                return new CustomResponse { ResponseCode = 400, ResponseMessage= "Invalid username and/or password" };
-            }
-			else
+			CustomResponse res = null;
+			try
 			{
-                var emailverify = await _userManager.FindByEmailAsync(user.Email);
-                if (user != null)
-                {
-                    if (await _userManager.CheckPasswordAsync(user, password))
-                    {
-                        if (user.EmailConfirmed)
-                        {
-                            var response = new LoginResponse()
-                            {
-                           
-                                    Email = user.Email,
-                                    FullName = $"{user.FirstName + " " + user.LastName}",
-                                    Id = user.Id,
-                                    Token = await _token.GenerateTokenAsync(user)
-                                
-                            };
-							return new CustomResponse { ResponseCode = 200, ResponseMessage = "login Successful", Data = response };
-                           
-                        }
-                        throw new AccessViolationException("Kindly verify your email address to login");
-                    }
-                    throw new AccessViolationException("Invalid credentials");
-                }
-                throw new AccessViolationException("Invalid Credntials");
-                
+                // Ensure expiry is not in the past
+                if (model.RequestedExpiry < DateTime.UtcNow)
+                    throw new ArgumentException("Expiry date cannot be in the past.");
+
+                // Cap expiry to 3 days from now
+                DateTime maxAllowedExpiry = DateTime.UtcNow.AddDays(3);
+                if (model.RequestedExpiry > maxAllowedExpiry)
+                    throw new ArgumentException("Expiry date cannot be more than 3 days from now.");
+
+                string token = GenerateRandomToken(6);
+				var obj = new
+				{
+					Token = token,
+					RequestExpiry = model.RequestedExpiry
+				};
+				return new CustomResponse { ResponseCode = 200, ResponseMessage = "token generated successfully", Data = obj };
             }
+			catch (Exception ex)
+			{
+
+			}
+			return res;
+		}
+        private string GenerateRandomToken(int length)
+        {
+            var random = new Random();
+            var sb = new StringBuilder(length);
+            for (int i = 0; i < length; i++)
+            {
+                var index = random.Next(AlphanumericChars.Length);
+                sb.Append(AlphanumericChars[index]);
+            }
+            return sb.ToString();
         }
 
         private string GenerateOTP()
