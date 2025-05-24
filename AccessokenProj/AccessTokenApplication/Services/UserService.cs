@@ -7,6 +7,7 @@ using AccessTokenDomain.Model.Response;
 using AccessTokenInfrastructure.UnitofWorks;
 using Azure;
 using Microsoft.AspNetCore.Identity;
+using static System.Net.WebRequestMethods;
 
 namespace AccessTokenApplication.Services
 {
@@ -15,12 +16,15 @@ namespace AccessTokenApplication.Services
 		private readonly IUnitOfWork _uow;
 		private readonly UserManager<User> _userManager;
 		private readonly ITokenGenerator _token;
-		public UserService(IUnitOfWork uow, UserManager<User> userManager, ITokenGenerator token)
+		private readonly IEmailService _email;
+		public UserService(IUnitOfWork uow, UserManager<User> userManager, ITokenGenerator token, IEmailService email)
 		{
 			_uow = uow;
 			_userManager = userManager;
 			_token = token;
-		}
+			_email = email;
+
+        }
 
 		public async Task<CustomResponse> CreateUser(UserRequest userdto)
 		{
@@ -47,7 +51,17 @@ namespace AccessTokenApplication.Services
 
 						if(rowchanges > 0)
 						{
-							return new CustomResponse { ResponseCode = 200, ResponseMessage = "user successfully created" };
+                            var otp = GenerateOTP();
+                            var msg = new EmailModel
+                            {
+                                EmailAddress = userdto.EmailAddress.Trim(),
+                                FirstName = userdto.FirstName,
+                                 OTP = otp,
+                            
+                            };
+							await _email.SendVerificationEmail(msg);
+
+                            return new CustomResponse { ResponseCode = 200, ResponseMessage = "user successfully created" };
 						}
 						else
 						{
@@ -108,7 +122,23 @@ namespace AccessTokenApplication.Services
             }
         }
 
+        private string GenerateOTP()
+        {
+            try
+            {
+                byte[] seed = Guid.NewGuid().ToByteArray();
+                Random _random = new Random(BitConverter.ToInt32(seed, 0));
+                int _rand = _random.Next(1000, 10000);
 
-	}
+                return _rand.ToString();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+    }
 }
 
