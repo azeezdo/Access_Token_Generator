@@ -1,0 +1,17 @@
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenInfrastructure.deps.json
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenInfrastructure.runtimeconfig.json
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenInfrastructure.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenInfrastructure.pdb
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenDomain.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/bin/Debug/net7.0/AccessTokenDomain.pdb
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.csproj.AssemblyReference.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.AssemblyInfoInputs.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.AssemblyInfo.cs
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.csproj.CoreCompileInputs.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.csproj.CopyComplete
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/refint/AccessTokenInfrastructure.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.pdb
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/AccessTokenInfrastructure.genruntimeconfig.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/Debug/net7.0/ref/AccessTokenInfrastructure.dll

@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccessTokenDomain\AccessTokenDomain.csproj" />
+    <ProjectReference Include="..\AccessTokenInfrastructure\AccessTokenInfrastructure.csproj" />
+  </ItemGroup>
 </Project>

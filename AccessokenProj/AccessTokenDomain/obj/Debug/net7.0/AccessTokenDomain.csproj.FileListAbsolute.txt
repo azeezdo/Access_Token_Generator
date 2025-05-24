@@ -1,0 +1,12 @@
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/bin/Debug/net7.0/AccessTokenDomain.deps.json
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/bin/Debug/net7.0/AccessTokenDomain.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/bin/Debug/net7.0/AccessTokenDomain.pdb
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.csproj.AssemblyReference.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.AssemblyInfoInputs.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.AssemblyInfo.cs
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.csproj.CoreCompileInputs.cache
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/refint/AccessTokenDomain.dll
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/AccessTokenDomain.pdb
+/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/Debug/net7.0/ref/AccessTokenDomain.dll

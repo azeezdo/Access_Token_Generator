@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Tio4jNNiTC61lqI6tpolgTwsz3CJ7hfn1BvDdDWtlXY=",
+  "Source": "AccessTokenAPI",
+  "BasePath": "_content/AccessTokenAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

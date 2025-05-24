@@ -9,9 +9,23 @@
   <ItemGroup>
     <None Remove="Entity\" />
     <None Remove="Model\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Interfaces\IRepositories\" />
+    <None Remove="Interfaces\IServices\" />
+    <None Remove="Model\Request\" />
+    <None Remove="Model\Response\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entity\" />
     <Folder Include="Model\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\IRepositories\" />
+    <Folder Include="Interfaces\IServices\" />
+    <Folder Include="Model\Request\" />
+    <Folder Include="Model\Response\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.20" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
   </ItemGroup>
 </Project>

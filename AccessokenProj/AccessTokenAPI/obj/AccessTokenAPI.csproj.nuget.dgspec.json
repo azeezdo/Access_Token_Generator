@@ -26,7 +26,14 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/AccessTokenApplication.csproj": {
+                "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/AccessTokenApplication.csproj"
+              },
+              "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj": {
+                "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -39,9 +46,41 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -63,6 +102,232 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/AccessTokenApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/AccessTokenApplication.csproj",
+        "projectName": "AccessTokenApplication",
+        "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/AccessTokenApplication.csproj",
+        "packagesPath": "/Users/thankucashtech03/.nuget/packages/",
+        "outputPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenApplication/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thankucashtech03/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj": {
+                "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj"
+              },
+              "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/AccessTokenInfrastructure.csproj": {
+                "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/AccessTokenInfrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj",
+        "projectName": "AccessTokenDomain",
+        "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj",
+        "packagesPath": "/Users/thankucashtech03/.nuget/packages/",
+        "outputPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thankucashtech03/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/AccessTokenInfrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/AccessTokenInfrastructure.csproj",
+        "projectName": "AccessTokenInfrastructure",
+        "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/AccessTokenInfrastructure.csproj",
+        "packagesPath": "/Users/thankucashtech03/.nuget/packages/",
+        "outputPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenInfrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/thankucashtech03/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj": {
+                "projectPath": "/Users/thankucashtech03/Desktop/task/Access_Token_Generator/AccessokenProj/AccessTokenDomain/AccessTokenDomain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[7.0.20, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[8.10.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
