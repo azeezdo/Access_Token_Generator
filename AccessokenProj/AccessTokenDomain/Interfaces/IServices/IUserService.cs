@@ -8,6 +8,7 @@ namespace AccessTokenDomain.Interfaces.IServices
 	{
         Task<CustomResponse> CreateUser(UserRequest userdto);
         Task<CustomResponse> GenerateAccessToken(TokenRequestModel model);
+        Task<CustomResponse> TokenVerification(TokenVerificationModel model);
 
     }
 }

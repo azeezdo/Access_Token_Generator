@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using AccessTokenDomain.Entity;
 using AccessTokenDomain.Interfaces.IServices;
 using AccessTokenDomain.Model.Request;
@@ -8,6 +9,7 @@ using AccessTokenDomain.Model.Response;
 using AccessTokenInfrastructure.UnitofWorks;
 using Azure;
 using Microsoft.AspNetCore.Identity;
+using Newtonsoft.Json.Linq;
 using static System.Net.WebRequestMethods;
 
 namespace AccessTokenApplication.Services
@@ -27,6 +29,8 @@ namespace AccessTokenApplication.Services
 
         }
         private const string AlphanumericChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        private static readonly Regex TokenFormat = new Regex("^[A-Z0-9]{6}$"); // 6-character alphanumeric
+
 
         public async Task<CustomResponse> CreateUser(UserRequest userdto)
 		{
@@ -102,12 +106,14 @@ namespace AccessTokenApplication.Services
                     throw new ArgumentException("Expiry date cannot be more than 3 days from now.");
 
                 string token = GenerateRandomToken(6);
-				var obj = new
+				var obj = new User
 				{
-					Token = token,
+					AccessToken = token,
 					RequestExpiry = model.RequestedExpiry
 				};
-				return new CustomResponse { ResponseCode = 200, ResponseMessage = "token generated successfully", Data = obj };
+                var result = await _userManager.UpdateAsync(obj);
+
+                return new CustomResponse { ResponseCode = 200, ResponseMessage = "token generated successfully", Data = obj };
             }
 			catch (Exception ex)
 			{
@@ -115,6 +121,43 @@ namespace AccessTokenApplication.Services
 			}
 			return res;
 		}
+
+		public async Task<CustomResponse> TokenVerification(TokenVerificationModel model)
+		{
+            CustomResponse res = null;
+            // Check format
+            if (!TokenFormat.IsMatch(model.Token))
+            {
+                return new CustomResponse { ResponseCode = 400, ResponseMessage = "Invalid token format." };
+//return false;
+            }
+
+            // Look up token in store
+            var tokenRecord = await _uow.userRepo.GetByExpressionAsync(t => t.AccessToken == model.Token);
+            if (tokenRecord == null)
+            {
+                return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token not found." };
+                //return false;
+            }
+
+            // Check user ownership
+            if (tokenRecord.Id != model.CurrentUserId)
+            {
+                return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token does not belong to the logged-in user." };
+                //return false;
+            }
+
+            // Check expiry
+            if (DateTime.UtcNow > tokenRecord.RequestExpiry)
+            {
+                return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token has expired." };
+                //return false;
+            }
+
+            return new CustomResponse { ResponseCode = 200, ResponseMessage = "Token is valid." };
+            
+
+        }
         private string GenerateRandomToken(int length)
         {
             var random = new Random();

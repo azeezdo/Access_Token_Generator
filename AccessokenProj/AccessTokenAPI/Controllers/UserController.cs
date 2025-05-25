@@ -58,8 +58,7 @@ namespace AccessTokenAPI.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("login")]
+        [HttpPost("login")]
         public async Task<IActionResult> LoginAsync(User user, string password)
         {
             try
@@ -84,6 +83,53 @@ namespace AccessTokenAPI.Controllers
             }
            
         }
+
+        [HttpPost("generateAccessToken")]
+        [Authorize]
+        public async Task<IActionResult> GenerateAccessToken([FromBody]TokenRequestModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                var result = await _user.GenerateAccessToken(model);
+                if (result != null)
+                {
+                    return Ok(result);
+                }
+
+                return BadRequest(result);
+            }
+
+
+            catch (AccessViolationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpGet("validateAccessToken")]
+        [Authorize]
+        public async Task<IActionResult> ValidateAccessToken([FromQuery] TokenVerificationModel model)
+        {
+            var response = await _user.TokenVerification(model);
+            if (response.ResponseCode == (int)HttpStatusCode.OK)
+            {
+                return Ok(response);
+            }
+            else if (response.ResponseCode == (int)HttpStatusCode.NotFound)
+            {
+                return NotFound(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
+        }
+
 
     }
 }

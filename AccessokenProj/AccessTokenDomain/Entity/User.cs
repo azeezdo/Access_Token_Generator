@@ -15,6 +15,9 @@ namespace AccessTokenDomain.Entity
         public DateTime Modify { get; set; }
         public string? OTP { get; set; }
         public DateTime? OtpSubmittedTime { get; set; }
+        public string? AccessToken { get; set; }
+        public DateTime RequestExpiry { get; set; }
+
 
     }
 }
