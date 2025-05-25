@@ -129,7 +129,6 @@ namespace AccessTokenApplication.Services
             if (!TokenFormat.IsMatch(model.Token))
             {
                 return new CustomResponse { ResponseCode = 400, ResponseMessage = "Invalid token format." };
-//return false;
             }
 
             // Look up token in store
@@ -137,26 +136,22 @@ namespace AccessTokenApplication.Services
             if (tokenRecord == null)
             {
                 return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token not found." };
-                //return false;
             }
 
             // Check user ownership
             if (tokenRecord.Id != model.CurrentUserId)
             {
                 return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token does not belong to the logged-in user." };
-                //return false;
             }
 
             // Check expiry
             if (DateTime.UtcNow > tokenRecord.RequestExpiry)
             {
                 return new CustomResponse { ResponseCode = 400, ResponseMessage = "Token has expired." };
-                //return false;
             }
 
             return new CustomResponse { ResponseCode = 200, ResponseMessage = "Token is valid." };
             
-
         }
         private string GenerateRandomToken(int length)
         {
